@@ -1,8 +1,14 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "/vite.svg";
-import { BsFacebook, BsSearch, BsTwitter, BsLinkedin, BsGithub } from "react-icons/bs";
-import {AiFillInstagram} from 'react-icons/ai'
+import {
+  BsFacebook,
+  BsSearch,
+  BsTwitter,
+  BsLinkedin,
+  BsGithub,
+} from "react-icons/bs";
+import { AiFillInstagram } from "react-icons/ai";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
@@ -19,11 +25,12 @@ const Navbar = () => {
 
   const submitSearch = (e) => {
     e.preventDefault();
+    OpenMenu()
   };
 
   return (
     <>
-      <div className="bg-white">
+      <div className="bg-white md:relative fixed top-0 left-0 w-full">
         <div className="container mx-auto w-full flex justify-between items-center md:px-0 px-4 relative">
           {/* logo */}
           <div className="flex items-center justify-center mr-4 py-4">
@@ -88,36 +95,67 @@ const Navbar = () => {
             </div>
           </nav>
           {/* mobile nav menu */}
-          <nav className={nav ? "flex items-center flex-col " : "hidden"}>
-            <ul className="flex items-center flex-col gap-3 absolute">
-              <li>
+          <nav
+            className={
+              nav
+                ? "flex items-center justify-between flex-col absolute py-8 top-0 left-0 h-screen bg-white w-full duration-300 gap-8"
+                : "left-[-150%] flex items-center justify-between flex-col absolute py-8 top-0 h-screen bg-white w-full duration-300 gap-8"
+            }
+          >
+            {/* search bar */}
+            <div className="w-full flex items-center justify-between mt-10 px-12 py-2">
+              <form
+                onSubmit={submitSearch}
+                className="flex w-full items-center justify-between"
+              >
+                <input
+                  type="text"
+                  placeholder="Search..."
+                  className={
+                    search
+                      ? "w-full p-[5px] text-[14px] border-b  focus:!outline-none duration-300"
+                      : "w-0 p-[5px] text-[14px] duration-300"
+                  }
+                />
+                <BsSearch
+                  onClick={OpenSearch}
+                  className="text-[#565673] h-full cursor-pointer my-1 ml-2"
+                />
+              </form>
+            </div>
+            <ul className="flex items-center flex-col gap-3 w-full h-full pt-4 ">
+              <li className="w-full flex items-center justify-center">
                 <Link
+                  onClick={OpenMenu}
                   to="/"
-                  className="font-[400] text-[#565673] hover:text-[#5f9ea0]"
+                  className="py-4 w-full text-center font-[400] text-[#565673] hover:text-[#5f9ea0]"
                 >
                   Home
                 </Link>
               </li>
-              <li>
+              <li className="w-full flex items-center justify-center">
                 <Link
+                  onClick={OpenMenu}
                   to="blogs"
-                  className="font-[400] text-[#565673] hover:text-[#5f9ea0]"
+                  className="py-4 w-full text-center font-[400] text-[#565673] hover:text-[#5f9ea0]"
                 >
                   Blogs
                 </Link>
               </li>
-              <li>
+              <li className="w-full flex items-center justify-center">
                 <Link
+                  onClick={OpenMenu}
                   to="about"
-                  className="font-[400] text-[#565673] hover:text-[#5f9ea0]"
+                  className="py-4 w-full text-center font-[400] text-[#565673] hover:text-[#5f9ea0]"
                 >
                   About
                 </Link>
               </li>
-              <li>
+              <li className="w-full flex items-center justify-center">
                 <Link
+                  onClick={OpenMenu}
                   to="contact"
-                  className="font-[400] text-[#565673] hover:text-[#5f9ea0]"
+                  className="py-4 w-full text-center font-[400] text-[#565673] hover:text-[#5f9ea0]"
                 >
                   Contact Us
                 </Link>
@@ -125,16 +163,29 @@ const Navbar = () => {
             </ul>
 
             {/* social links */}
-          <div className="flex items-center gap-4">
-            <Link className="hover:text-[#5f9ea0] text-white text-[14px]"><BsFacebook/></Link>
-            <Link className="hover:text-[#5f9ea0] text-white text-[14px]"><BsTwitter/></Link>
-            <Link className="hover:text-[#5f9ea0] text-white text-[14px]"><AiFillInstagram/></Link>
-            <Link className="hover:text-[#5f9ea0] text-white text-[14px]"><BsLinkedin/></Link>
-            <Link className="hover:text-[#5f9ea0] text-white text-[14px]"><BsGithub/></Link>
-          </div>
+            <div className="flex items-center gap-8 py-4">
+              <Link className="hover:text-[#5f9ea0] text-[#565673] text-[14px]">
+                <BsFacebook size={18} />
+              </Link>
+              <Link className="hover:text-[#5f9ea0] text-[#565673] text-[14px]">
+                <BsTwitter size={18} />
+              </Link>
+              <Link className="hover:text-[#5f9ea0] text-[#565673] text-[14px]">
+                <AiFillInstagram size={18} />
+              </Link>
+              <Link className="hover:text-[#5f9ea0] text-[#565673] text-[14px]">
+                <BsLinkedin size={18} />
+              </Link>
+              <Link className="hover:text-[#5f9ea0] text-[#565673] text-[14px]">
+                <BsGithub size={18} />
+              </Link>
+            </div>
           </nav>
           {/* menu icon */}
-          <div onClick={OpenMenu} className="cursor-pointer md:hidden flex">
+          <div
+            onClick={OpenMenu}
+            className="cursor-pointer z-10 md:hidden flex pl-4"
+          >
             {nav ? <FaTimes size={22} /> : <FaBars size={22} />}
           </div>
         </div>

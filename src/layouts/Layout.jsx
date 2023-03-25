@@ -10,7 +10,7 @@ const Layout = () => {
     <>
       <Header />
       <Navbar />
-      <div className='container mx-auto grid md:grid-cols-[70%_28%] grid-cols-1 gap-[2%] my-5 box-border'>
+      <div className='container mx-auto grid md:grid-cols-[70%_28%] grid-cols-1 gap-[2%] my-5 md:mt-5 mt-[5.5rem] box-border'>
       <Outlet />
       <Sidebar/>
       </div>
