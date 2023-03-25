@@ -98,12 +98,12 @@ const Navbar = () => {
           <nav
             className={
               nav
-                ? "flex items-center justify-between flex-col absolute py-8 top-0 left-0 h-screen bg-white w-full duration-300 gap-8"
-                : "left-[-150%] flex items-center justify-between flex-col absolute py-8 top-0 h-screen bg-white w-full duration-300 gap-8"
+                ? "flex items-center flex-col absolute py-8 top-0 left-0 h-screen bg-white w-full duration-300 gap-4"
+                : "left-[-150%] flex items-center flex-col absolute py-8 top-0 h-screen bg-white w-full duration-300 gap-4"
             }
           >
             {/* search bar */}
-            <div className="w-full flex items-center justify-between mt-10 px-12 py-2">
+            <div className="w-full flex items-center mt-10 px-12 py-2">
               <form
                 onSubmit={submitSearch}
                 className="flex w-full items-center justify-between"
@@ -123,7 +123,7 @@ const Navbar = () => {
                 />
               </form>
             </div>
-            <ul className="flex items-center flex-col gap-3 w-full h-full pt-4 ">
+            <ul className="flex items-center flex-col gap-3 w-full mb-20 pt-4 ">
               <li className="w-full flex items-center justify-center">
                 <Link
                   onClick={OpenMenu}
