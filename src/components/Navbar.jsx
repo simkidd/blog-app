@@ -123,7 +123,7 @@ const Navbar = () => {
                 />
               </form>
             </div>
-            <ul className="flex items-center flex-col gap-3 w-full mb-20 pt-4 ">
+            <ul className="flex items-center flex-col gap-3 w-full h-[60%] pt-4 ">
               <li className="w-full flex items-center justify-center">
                 <Link
                   onClick={OpenMenu}
