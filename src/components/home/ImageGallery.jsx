@@ -19,8 +19,8 @@ const ImageGallery = (props) => {
         </div>
 
         <div style={{ width: smallWidth }}>
-          {imagesArray.map((image) => {
-            return <SideImage height={sideImageHeight} src={image} />;
+          {imagesArray.map((image, i) => {
+            return <SideImage key={i} height={sideImageHeight} src={image} />;
           })}
         </div>
       </div>

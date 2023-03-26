@@ -4,6 +4,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
+import ScrollToTopButton from '../components/ScrollToTopButton';
 
 const Layout = () => {
   return (
@@ -15,6 +16,7 @@ const Layout = () => {
       <Sidebar/>
       </div>
       <Footer />
+      <ScrollToTopButton />
     </>
   )
 }

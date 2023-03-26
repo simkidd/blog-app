@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import { BlogsData } from '../data/BlogsData';
 
 const SingleBlog = () => {
   const [blog, setBlog] = useState({})
   const {slug} = useParams()
+
+  const location = useLocation();
+  // offset to top of page when open
+  useEffect(()=>{
+      window.scrollTo(0,0)
+  },[location.pathname])
 
   useEffect(()=>{
     const blog = BlogsData.find((blog)=> blog.slug == slug);

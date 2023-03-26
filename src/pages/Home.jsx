@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import ImageGallery from "../components/home/ImageGallery";
 import RecentPosts from "../components/home/RecentPosts";
 // import {data} from "../data/blogs.json";
 import {BlogsData} from '../data/BlogsData'
 
 const Home = () => {
+  const location = useLocation();
+  // offset to top of page when open
+  useEffect(()=>{
+      window.scrollTo(0,0)
+  },[location.pathname])
+
   const galleryHeight = 450;
   const galleryStyle = {
     height: galleryHeight + "px",

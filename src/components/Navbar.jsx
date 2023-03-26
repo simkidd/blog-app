@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Logo from "/vite.svg";
 import {
   BsFacebook,
@@ -125,40 +125,40 @@ const Navbar = () => {
             </div>
             <ul className="flex items-center flex-col gap-3 w-full h-[60%] pt-4 ">
               <li className="w-full flex items-center justify-center">
-                <Link
+                <NavLink
                   onClick={OpenMenu}
                   to="/"
                   className="py-4 w-full text-center font-[400] text-[#565673] hover:text-[#5f9ea0]"
                 >
                   Home
-                </Link>
+                </NavLink>
               </li>
               <li className="w-full flex items-center justify-center">
-                <Link
+                <NavLink
                   onClick={OpenMenu}
                   to="blogs"
                   className="py-4 w-full text-center font-[400] text-[#565673] hover:text-[#5f9ea0]"
                 >
                   Blogs
-                </Link>
+                </NavLink>
               </li>
               <li className="w-full flex items-center justify-center">
-                <Link
+                <NavLink
                   onClick={OpenMenu}
                   to="about"
                   className="py-4 w-full text-center font-[400] text-[#565673] hover:text-[#5f9ea0]"
                 >
                   About
-                </Link>
+                </NavLink>
               </li>
               <li className="w-full flex items-center justify-center">
-                <Link
+                <NavLink
                   onClick={OpenMenu}
                   to="contact"
                   className="py-4 w-full text-center font-[400] text-[#565673] hover:text-[#5f9ea0]"
                 >
                   Contact Us
-                </Link>
+                </NavLink>
               </li>
             </ul>
 
