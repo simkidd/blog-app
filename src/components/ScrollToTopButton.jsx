@@ -29,9 +29,9 @@ const ScrollToTopButton = () => {
 
   return (
     <>
-        <button className={`bg-[#565673] text-white hover:bg-[#5f9ea0] p-2 opacity-0 duration-200 fixed bottom-3 right-3 ${showButton ? 'opacity-100' : ''}`}
+        <button className={`bg-[#565673] text-white hover:bg-[#5f9ea0] p-2 opacity-0 duration-200 fixed bottom-6 right-6 ${showButton ? 'opacity-100' : ''}`}
         onClick={scrollToTop}>
-            <RiArrowUpSLine size={20} />
+            <RiArrowUpSLine size={22} />
         </button>
     </>
   )
